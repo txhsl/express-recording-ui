@@ -108,6 +108,12 @@ export default new Router({
                     meta: { title: 'Schart' }
                 }, 
                 {
+                    // vue-qrcode-reader组件
+                    path: '/qrcode',
+                    component: resolve => require(['../components/page/QRScanner.vue'], resolve),
+                    meta: { title: 'QRCode' }
+                },
+                {
                     path: '/404',
                     component: resolve => require(['../components/page/404.vue'], resolve),
                     meta: { title: '404' }

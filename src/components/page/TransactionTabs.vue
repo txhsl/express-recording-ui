@@ -38,7 +38,7 @@
                                         <span>{{ props.row.receipt.blockNumber }}</span>
                                     </el-form-item>
                                     <el-form-item label="Logs">
-                                        <span>{{ props.row.receipt.logs }}</span>
+                                        <pre>{{ props.row.receipt.logs }}</pre>
                                     </el-form-item>
                                 </el-form>
                             </template>

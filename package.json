@@ -1,5 +1,5 @@
 {
-  "name": "iot-management-system-ui",
+  "name": "express-recording-ui",
   "version": "4.0.0",
   "private": true,
   "scripts": {
@@ -8,12 +8,14 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "@chenfengyuan/vue-qrcode": "^1.0.1",
+    "axios": "^0.18.1",
     "babel-polyfill": "^6.26.0",
     "element-ui": "^2.4.11",
     "mavon-editor": "^2.6.17",
-    "vue": "^2.5.21",
+    "vue": "^2.6.10",
     "vue-cropperjs": "^3.0.0",
+    "vue-qrcode-reader": "^2.1.1",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.1",
     "vue-schart": "^1.0.0",
@@ -23,6 +25,6 @@
     "@vue/cli-plugin-babel": "^3.2.0",
     "@vue/cli-service": "^3.2.0",
     "vue-resource": "^1.5.1",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.10"
   }
 }

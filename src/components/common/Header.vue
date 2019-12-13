@@ -4,7 +4,7 @@
         <div class="collapse-btn" @click="collapseChage">
             <i class="el-icon-menu"></i>
         </div>
-        <div class="logo">IoT Data Management System for Supply Chain</div>
+        <div class="logo">Express Recording System</div>
         <div class="header-right">
             <div class="header-user-con">
                 <!-- 全屏显示 -->
