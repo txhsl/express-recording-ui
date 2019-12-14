@@ -10,14 +10,11 @@
         <div class="container">
             <div class="form-box">
                 <el-form ref="form" :model="form" label-width="120px">
-                    <el-form-item label="Transaction ID">
-                        <el-input v-model="form.txid"></el-input>
+                    <el-form-item label="Order ID">
+                        <el-input v-model="form.order"></el-input>
                     </el-form-item>
                     <el-form-item label="Target User">
                         <el-input v-model="form.target"></el-input>
-                    </el-form-item>
-                    <el-form-item label="Amount">
-                        <el-input-number v-model="form.amount" :min="1" :max="100"></el-input-number>
                     </el-form-item>
                     <el-form-item label="Reason">
                         <el-input type="textarea" rows="5" v-model="form.reason"></el-input>
@@ -39,9 +36,8 @@
         data: function(){
             return {
                 form: {
-                    txid: '',
+                    order: '',
                     target: '',
-                    amount: 1,
                     reason: ''
                 }
             }
@@ -52,7 +48,6 @@
                     from: localStorage.getItem('ms_username'),
                     txid: this.form.txid,
                     target: this.form.target,
-                    amount: this.form.amount,
                     reason: this.form.reason
                 }).then(res => {
                     if (res.data.result) {

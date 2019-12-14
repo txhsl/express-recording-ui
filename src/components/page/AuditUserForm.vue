@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="container">
-            <label class="el-form-item__label">Credit Rating: {{level}}</label>
+            <label class="el-form-item__label">Balance: {{balance}} EC</label>
             <el-table :data="result" style="width: 100%">
                 <el-table-column type="expand">
                     <template slot-scope="props">
@@ -74,15 +74,15 @@
                     address: ''
                 },
                 result: [],
-                level: ''
+                balance: ''
             }
         },
         methods: {
             onSubmit() {
-                var url1 = "/service/arbitration/level/";
+                var url1 = "/service/arbitration/balance/";
                 var url2 = "/service/transaction/userHistory/";
                 this.$axios.get(url1 + this.form.address).then(res => {
-                    this.level = res.data;
+                    this.balance = res.data;
                     this.$axios.get(url2 + this.form.address).then(res => {
                         this.$message.success('Success!');
                         this.result = res.data;

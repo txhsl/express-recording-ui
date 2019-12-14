@@ -217,21 +217,13 @@
             },
             localize(type, isRead) {
                 switch(type) {
-                    case '注册':
-                        return 'Register';
-                    case '属性':
-                        return 'Property';
-                    case '角色':
-                        return 'Role';
-                    case '权限':
+                    case 'Permission':
                         if(isRead)
                             return 'Read Permission';
                         else
                             return 'Write Permission';
-                    case '检举':
-                        return 'Report';
                     default:
-                        return '';
+                        return type;
                 }
             }
         },

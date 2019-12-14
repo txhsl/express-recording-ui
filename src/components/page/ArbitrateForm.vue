@@ -9,13 +9,11 @@
         </div>
         <div class="container">
             <el-table :data="tableData" border class="table" ref="multipleTable">
+                <el-table-column prop="order" label="Order ID">
+                </el-table-column>
                 <el-table-column prop="target" label="Target User" sortable>
                 </el-table-column>
-                <el-table-column prop="txid" label="Transaction ID">
-                </el-table-column>
                 <el-table-column prop="from" label="From">
-                </el-table-column>
-                <el-table-column prop="amount" label="Amount">
                 </el-table-column>
                 <el-table-column prop="reason" label="Reason">
                 </el-table-column>
@@ -46,9 +44,8 @@
                     res.data.forEach(report => {
                         results.push({
                             target: report.target,
-                            txid: report.txid,
+                            order: report.order,
                             from: report.from,
-                            amount: report.amount,
                             reason: report.reason,
                             index: count++
                         });

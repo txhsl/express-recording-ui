@@ -10,8 +10,8 @@
                         </div>
                     </div>
                     <div class="user-info-list">Address: <span>{{name}}</span></div>
-                    <div class="user-info-list">Balance: <span>{{balance.toFixed(2)}} Ether</span></div>
-                    <div class="user-info-list">Credit Rating: <span>{{level}}</span></div>
+                    <div class="user-info-list">ETH Balance: <span>{{ETHbalance.toFixed(2)}} Ether</span></div>
+                    <div class="user-info-list">EC Balance: <span>{{ECbalance.toFixed(2)}} EC</span></div>
                 </el-card>
                 <el-card shadow="hover" style="height:520px;">
                     <div slot="header" class="clearfix">
@@ -74,8 +74,8 @@
         data() {
             return {
                 name: localStorage.getItem('ms_username'),
-                balance: 0,
-                level:0,
+                ETHbalance: 0,
+                ECbalance: 0,
                 rcAddr: '',
                 roles: {},
                 roleNames: [],
@@ -151,11 +151,11 @@
                 });
             this.$axios.get("/service/transaction/balance")
                 .then(res => {
-                    this.balance = res.data;
+                    this.ETHbalance = res.data;
                 });
-            this.$axios.get("/service/arbitration/level/" + this.name)
+            this.$axios.get("/service/arbitration/balance/" + this.name)
                 .then(res => {
-                    this.level = res.data;
+                    this.ECbalance = res.data;
                 });
             this.$axios.get("/service/transaction/completed/address")
                 .then(res => {
