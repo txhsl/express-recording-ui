@@ -94,7 +94,11 @@ export default new Router({
                     component: resolve => require(['../components/page/ArbitrateForm.vue'], resolve),
                     meta: { title: 'Handle Report' }
                 },
-
+                {
+                    path: '/order',
+                    component: resolve => require(['../components/page/OrderTable.vue'], resolve),
+                    meta: { title: 'Orders' }
+                },
                 {
                     // 图片上传组件
                     path: '/upload',

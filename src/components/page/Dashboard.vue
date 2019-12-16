@@ -10,8 +10,8 @@
                         </div>
                     </div>
                     <div class="user-info-list">Address: <span>{{name}}</span></div>
-                    <div class="user-info-list">ETH Balance: <span>{{ETHbalance.toFixed(2)}} Ether</span></div>
-                    <div class="user-info-list">EC Balance: <span>{{ECbalance.toFixed(2)}} EC</span></div>
+                    <div class="user-info-list">Balance: <span>{{ETHbalance.toFixed(2)}} Ether</span></div>
+                    <div class="user-info-list">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>{{ECbalance.toFixed(2)}} EC</span></div>
                 </el-card>
                 <el-card shadow="hover" style="height:520px;">
                     <div slot="header" class="clearfix">
@@ -106,11 +106,8 @@
         },
         computed: {
             role() {
-                if (this.name === '0x6a2fb5e3bf37f0c3d90db4713f7ad4a3b2c24111') {
-                    return 'System Admin';
-                }
-                else if (this.leaders.includes(this.name)) {
-                    return this.roleNames[this.leaders.indexOf(this.name)] + ' Admin';
+                if (this.leaders.includes(this.name)) {
+                    return this.roleNames[this.leaders.indexOf(this.name)];
                 }
                 else {
                     for(var name in this.roles) {
@@ -128,7 +125,6 @@
         mounted(){
             this.$axios.get("/service/system/getRoleNames")
                 .then(res => {
-                    this.roleNames = ["System Admin"];
                     res.data.forEach(name => {
                         this.roleNames.push(name);
                     })

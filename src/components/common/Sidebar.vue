@@ -67,7 +67,11 @@
                         title: 'Data Management',
                         subs: [
                             {
-                                index: '2-1',
+                                index: 'order',
+                                title: 'Orders'
+                            },
+                            {
+                                index: '2-2',
                                 title: 'Save',
                                 subs: [
                                     {
@@ -81,7 +85,7 @@
                                 ]
                             },
                             {
-                                index: '2-2',
+                                index: '2-3',
                                 title: 'Query',
                                 subs: [
                                     {
