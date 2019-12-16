@@ -46,7 +46,7 @@
             onSubmit() {
                 this.$axios.post("/service/arbitration/report", {
                     from: localStorage.getItem('ms_username'),
-                    txid: this.form.txid,
+                    order: this.form.order,
                     target: this.form.target,
                     reason: this.form.reason
                 }).then(res => {
